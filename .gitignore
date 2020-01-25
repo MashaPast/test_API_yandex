@@ -1,0 +1,6 @@
+config_API.ini
+.idea/
+venv/
+examples/
+./pytest_cache/
+__pycache__/
