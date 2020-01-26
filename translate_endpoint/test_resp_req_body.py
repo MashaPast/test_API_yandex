@@ -2,20 +2,24 @@ import requests
 import json
 import pytest
 from config import config_data
+import os
+
+YANDEX_API_CONFIG = config_data['YandexTranslateEndpoint']
 
 
 
+@pytest.mark.parametrize(('file_path'), [('assets/body_asset_1.json'),  ('assets/body_asset_2.json')])
+def test_yandex_api_word_translate(file_path):
 
-@pytest.mark.parametrize(('file_path'), [('/home/krab/PycharmProjects/tests_API_yandex/translate_endpoint/assets/body_asset_1.json'),  ('/home/krab/PycharmProjects/tests_API_yandex/translate_endpoint/assets/body_asset_2.json')])
-def test_resp_req_body_equals_body_asset_1_and_body_asset_2(file_path):
-    with open(file_path, 'r') as f:
-        body_asset_dict = json.load(f)
-        text = body_asset_dict['req']['word']
-    translate_config = config_data['YandexTranslateEndpoint']
-    full_url = '{}?key={}&text={}&lang=en-ru'.format(translate_config['url'], translate_config['key'], text)
+    with open(os.path.abspath(file_path), 'r') as f:
+        body_asset = json.load(f)
+        text = body_asset['req']['word']
+
+#chenge to func
+    full_url = '{}?key={}&text={}&lang=en-ru'.format(YANDEX_API_CONFIG['url'], YANDEX_API_CONFIG['key'], text)
     response = requests.get(full_url)
-    body_dict = response.json()
-    print(body_dict['text'])
-    assert (body_dict['text'] == body_asset_dict['res']['text'])
+    body_response = response.json()
+
+    assert (body_response['text'] == body_asset['res']['text'])
 
 
