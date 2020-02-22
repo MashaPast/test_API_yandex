@@ -14,7 +14,7 @@ pytest --alluredir=./report_dir test_API.py
 allure serve /home/krab/PycharmProjects/tests_API_yandex/report_dir/
 
 ```
-##PYTHONPATH FOR EXECUTING MODULES FROM PACKAGES 
+## PYTHONPATH FOR EXECUTING MODULES FROM PACKAGES 
 
 ```bash
 echo $PYTHONPATH 
