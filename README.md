@@ -29,4 +29,4 @@ pytest --html=report.html
 
 ```bash
 pytestmark = pytest.mark.skipif('2 == 2')
-```bash
+```
