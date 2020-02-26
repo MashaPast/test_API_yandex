@@ -25,3 +25,8 @@ PYTHONPATH=$PYTHONPATH:$(pwd) pytest websocket_API/ticker/test_ticker_ws.py
 ```bash
 pytest --html=report.html
 ```
+## SKIPPING MODULE PYTEST
+
+```bash
+pytestmark = pytest.mark.skipif('2 == 2')
+```bash
