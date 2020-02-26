@@ -20,3 +20,8 @@ allure serve /home/krab/PycharmProjects/tests_API_yandex/report_dir/
 echo $PYTHONPATH 
 PYTHONPATH=$PYTHONPATH:$(pwd) pytest websocket_API/ticker/test_ticker_ws.py 
 ```
+## GENERATING HTML REPORT
+
+```bash
+pytest --html=report.html
+```
