@@ -27,6 +27,11 @@ pytest --html=report.html
 ```
 ## SKIPPING MODULE PYTEST
 
-```bash
+global variable:
 pytestmark = pytest.mark.skipif('2 == 2')
+
+## RUN ORDER OF TESTS
+```bash
+pip3 install pytest-ordering
 ```
+@pytest.mark.run(order=2)
