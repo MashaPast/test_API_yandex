@@ -22,6 +22,9 @@ allure serve /home/krab/PycharmProjects/tests_API_yandex/report_dir/
 nano .bashrc
 PATH=$PATH:/home/masha/programs/allure-2.13.2/bin
 ```
+```bash
+pipenv install allure-pytest
+```
 ## PYTHONPATH FOR EXECUTING MODULES FROM PACKAGES 
 
 ```bash
