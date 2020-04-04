@@ -8,6 +8,17 @@ allure --version
 pip3 install -Iv allure-pytest==2.7.1
 
 ```
+* how to use (with saving history)
+```bash
+pytest --alluredir=./results test_sum.py
+allure generate ./results -o ./allure-report
+pytest --alluredir=./results2 test_sum.py
+```
+* copy history folder from allure-report/history to results2
+```bash
+allure generate --clean ./results2/ -o ./allure-report/
+allure open allure-report/
+```
 * how to use
 ```bash
 pytest --alluredir=./report_dir test_API.py
