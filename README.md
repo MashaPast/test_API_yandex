@@ -14,7 +14,7 @@ pytest --alluredir=./results test_sum.py
 allure generate ./results -o ./allure-report
 pytest --alluredir=./results2 test_sum.py
 ```
-* copy history folder from allure-report/history to results2
+copy history folder from allure-report/history to results2
 ```bash
 allure generate --clean ./results2/ -o ./allure-report/
 allure open allure-report/
